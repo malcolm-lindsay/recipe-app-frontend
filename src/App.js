@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import RecipeTable from './RecipeTable.js';
+import RecipeTable from './Recipes.js';
 
 
 
@@ -12,10 +12,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1> Recipe app</h1>
+ 
   <RecipeTable/>
-
-  <button onclick="<Users/>">  Users </button>
-  <button onclick="<Reviews/>">  Reviews </button>
 
         </header>
       </div>

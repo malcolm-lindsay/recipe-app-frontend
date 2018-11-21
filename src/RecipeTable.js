@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
-// import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import ReactDOM from 'react-dom';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+
 
 class RecipeTable extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            RecipieInformation: this.props.array}
       }
-
       render() {
         return (
-<table>
-    <th>recipe ID</th>
-    <th>recipe name</th>
-    <th>Serving size</th>
-    <th>Recipe type</th>
-    <th>Dietry information</th>
-</table>
+            <div>
+  <BootstrapTable keyfield='account'>
+      <TableHeaderColumn dataField='id' isKey>Recipe ID</TableHeaderColumn>
+      <TableHeaderColumn>Recipe Name</TableHeaderColumn>
+      <TableHeaderColumn>Serving Size</TableHeaderColumn>
+      <TableHeaderColumn>Recipe type</TableHeaderColumn>
+      <TableHeaderColumn>Dietry information</TableHeaderColumn>
+  </BootstrapTable>     
+</div>
 
    );
+    }
 }
-};
-
 export default RecipeTable;

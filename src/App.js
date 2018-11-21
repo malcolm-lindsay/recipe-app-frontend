@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import './App.css';
 import RecipeTable from './RecipeTable.js';
 
+
+
+
 class App extends Component {
   render() {
     return (
@@ -10,7 +13,10 @@ class App extends Component {
         <header className="App-header">
           <h1> Recipe app</h1>
   <RecipeTable/>
-        
+
+  <button onclick="<Users/>">  Users </button>
+  <button onclick="<Reviews/>">  Reviews </button>
+
         </header>
       </div>
     );

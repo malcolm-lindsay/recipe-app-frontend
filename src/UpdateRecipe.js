@@ -9,7 +9,7 @@ class UpdateRecipe extends Component {
     this.state = ({
    
         port: 8180,
-        data:[],
+        data:[]
     });
 }
 
@@ -18,14 +18,14 @@ class UpdateRecipe extends Component {
         var data = {
         recipeName:document.getElementById('newRecipeName').value,
         recipeType:document.getElementById('newRecipeType').value,
-        servingSize:document.getElementById('newDietryInformation').value,
-        dietryInformation:document.getElementById('newServingSize').value
+        servingSize:document.getElementById('newServingSize').value,
+        dietryInformation:document.getElementById('newDietryInformation').value
       };
       console.log(data);
       // event.preventDefault();
       axios.put("http://localhost:" + this.state.port + "/new-account/rest/Recipes/updateRecipe/" + document.getElementById('recipeID').value, data).then((response) => {
         console.log(response.data);
-    //    window.location.reload();
+       window.location.reload();
       });
     }
 

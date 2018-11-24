@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.renderUsers();
+    this.renderRecipes();
   }
   
   renderRecipes = () => {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import 'react-bootstrap-table/dist/react-bootstrap-table.min.css';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import AddRecipe from './AddRecipe.js'
@@ -46,18 +47,17 @@ updateFunction = (event) => {
       <div className="RecipeTable" >
 
           <BootstrapTable id="tableList" data={this.state.tableArray} className="table table-striped" search scrollable >
-            <TableHeaderColumn dataField='recipeID' isKey dataSort dataAlign='center'>Recipe ID</TableHeaderColumn>
-            <TableHeaderColumn dataField='recipeName' dataAlign='center'>Recipe Name</TableHeaderColumn>
-            <TableHeaderColumn dataField='servingSize' dataSort dataAlign='center'>Serving Size</TableHeaderColumn>
-            <TableHeaderColumn dataField='recipeType' dataFormat={this.showDescription} dataAlign='center'>Recipe Type</TableHeaderColumn>
-            <TableHeaderColumn dataField='dietryInformation' dataFormat={this.showDescription} dataAlign='center'>Dietry Information</TableHeaderColumn>
-            <TableHeaderColumn dataField='updateButton' dataFormat={this.createUpdateButton} dataAlign='center'></TableHeaderColumn>
-            <TableHeaderColumn dataField='button' dataFormat={this.createDeleteButton} dataAlign='center'></TableHeaderColumn>  
+            <TableHeaderColumn width= '100' dataField='recipeID' isKey dataSort dataAlign='center'>Recipe ID</TableHeaderColumn>
+            <TableHeaderColumn width= '100' dataField='recipeName' dataSort dataAlign='center'>Recipe Name</TableHeaderColumn>
+            <TableHeaderColumn width= '100' dataField='servingSize' dataSort dataAlign='center'>Serving Size</TableHeaderColumn>
+            <TableHeaderColumn width= '100' dataField='recipeType' dataSort dataFormat={this.showDescription} dataAlign='center'>Recipe Type</TableHeaderColumn>
+            <TableHeaderColumn width= '150' dataField='dietryInformation' dataSort dataFormat={this.showDescription} dataAlign='centre'>Dietry Information</TableHeaderColumn>
+            <TableHeaderColumn width= '100' dataField='updateButton' dataFormat={this.createUpdateButton} dataAlign='center'>Update</TableHeaderColumn>
+             <TableHeaderColumn width= '100'  dataField='button' dataFormat={this.createDeleteButton} dataAlign='center'>Delete</TableHeaderColumn>  
           </BootstrapTable>    
 
           <div id="createDiv">
-            <button id="CreateButton" className="btn btn-success" onClick={() => this.createFunction()}>{this.state.type}</button><br/>
-          </div>
+            <button id="CreateButton" className="btn btn-success" onClick={() => this.createFunction()}>{this.state.type}</button>  </div>
       </div>
     );
   }

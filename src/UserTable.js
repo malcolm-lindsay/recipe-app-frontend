@@ -46,13 +46,13 @@ updateFunction = (event) => {
       <div className="UserTable" >
 
           <BootstrapTable id="tableList" data={this.state.tableArray} className="table table-striped" search scrollable >
-            <TableHeaderColumn dataField='userID' isKey dataSort dataAlign='center'>user ID</TableHeaderColumn>
-            <TableHeaderColumn dataField='userName' dataAlign='center'>Username</TableHeaderColumn>
-            <TableHeaderColumn dataField='dietryRequirements' dataSort dataAlign='center'>Username</TableHeaderColumn>
-            <TableHeaderColumn dataField='emailAddress' dataFormat={this.showDescription} dataAlign='center'>Email Address</TableHeaderColumn>
-            <TableHeaderColumn dataField='age' dataFormat={this.showDescription} dataAlign='center'>Age</TableHeaderColumn>
-            <TableHeaderColumn dataField='updateButton' dataFormat={this.createUpdateButton} dataAlign='center'></TableHeaderColumn>
-            <TableHeaderColumn dataField='button' dataFormat={this.createDeleteButton} dataAlign='center'></TableHeaderColumn>  
+            <TableHeaderColumn width= '100' dataField='userID' isKey dataSort dataAlign='center'>user ID</TableHeaderColumn>
+            <TableHeaderColumn width= '150' dataField='userName' dataAlign='center'>Username</TableHeaderColumn>
+            <TableHeaderColumn width= '150' dataField='dietryRequirements' dataSort dataAlign='center'>DietryRequirements</TableHeaderColumn>
+            <TableHeaderColumn width= '200' dataField='emailAddress' dataFormat={this.showDescription} dataAlign='center'>Email Address</TableHeaderColumn>
+            <TableHeaderColumn width= '150' dataField='age' dataFormat={this.showDescription} dataAlign='center' headerAlign = 'centre'>Age</TableHeaderColumn>
+            <TableHeaderColumn width= '100' dataField='updateButton' dataFormat={this.createUpdateButton} dataAlign='center'></TableHeaderColumn>
+            <TableHeaderColumn width= '100' dataField='button' dataFormat={this.createDeleteButton} dataAlign='center'></TableHeaderColumn>  
           </BootstrapTable>    
 
           <div id="createDiv">

@@ -9,23 +9,24 @@ class UpdateUser extends Component {
     this.state = ({
    
         port: 8180,
-        data:[],
+        data:[]
     });
 }
 
 
   UpdateUser = (event) => {     
         var data = {
-        recipeName:document.getElementById('newUsername').value,
-        recipeType:document.getElementById('newDietryRequirements').value,
-        servingSize:document.getElementById('newEmailAddress').value,
-        dietryInformation:document.getElementById('newAge').value
+        userName:document.getElementById('newUsername').value,
+        dietryRequirements:document.getElementById('newDietryRequirements').value,
+        emailAddress:document.getElementById('newEmailAddress').value,
+        age:document.getElementById('newAge').value
+
       };
       console.log(data);
-      // event.preventDefault();
+      event.preventDefault();
       axios.put("http://localhost:" + this.state.port + "/new-account/rest/Users/updateUser/" + document.getElementById('userID').value, data).then((response) => {
         console.log(response.data);
-    //    window.location.reload();
+       window.location.reload();
       });
     }
 
@@ -57,5 +58,4 @@ Enter the updated age
 </div>
 )}
 }
-
 export default UpdateUser;

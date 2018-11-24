@@ -50,10 +50,10 @@ updateFunction = (event) => {
             <TableHeaderColumn width= '100' dataField='recipeID' isKey dataSort dataAlign='center'>Recipe ID</TableHeaderColumn>
             <TableHeaderColumn width= '100' dataField='recipeName' dataSort dataAlign='center'>Recipe Name</TableHeaderColumn>
             <TableHeaderColumn width= '100' dataField='servingSize' dataSort dataAlign='center'>Serving Size</TableHeaderColumn>
-            <TableHeaderColumn width= '100' dataField='recipeType' dataSort dataFormat={this.showDescription} dataAlign='center'>Recipe Type</TableHeaderColumn>
-            <TableHeaderColumn width= '150' dataField='dietryInformation' dataSort dataFormat={this.showDescription} dataAlign='centre'>Dietry Information</TableHeaderColumn>
-            <TableHeaderColumn width= '100' dataField='updateButton' dataFormat={this.createUpdateButton} dataAlign='center'>Update</TableHeaderColumn>
-             <TableHeaderColumn width= '100'  dataField='button' dataFormat={this.createDeleteButton} dataAlign='center'>Delete</TableHeaderColumn>  
+            <TableHeaderColumn width= '100' dataField='recipeType' dataSort dataAlign='center'>Recipe Type</TableHeaderColumn>
+            <TableHeaderColumn width= '150' dataField='dietryInformation' dataAlign='centre'>Dietry Information</TableHeaderColumn>
+            <TableHeaderColumn width= '100' dataField='updateButton' dataFormat={this.createUpdateButton} dataAlign='center'></TableHeaderColumn>
+             <TableHeaderColumn width= '100'  dataField='button' dataFormat={this.createDeleteButton} dataAlign='center'></TableHeaderColumn>  
           </BootstrapTable>    
 
           <div id="createDiv">

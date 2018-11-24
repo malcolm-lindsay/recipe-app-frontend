@@ -49,8 +49,8 @@ updateFunction = (event) => {
             <TableHeaderColumn width= '100' dataField='userID' isKey dataSort dataAlign='center'>user ID</TableHeaderColumn>
             <TableHeaderColumn width= '150' dataField='userName' dataAlign='center'>Username</TableHeaderColumn>
             <TableHeaderColumn width= '150' dataField='dietryRequirements' dataSort dataAlign='center'>DietryRequirements</TableHeaderColumn>
-            <TableHeaderColumn width= '200' dataField='emailAddress' dataFormat={this.showDescription} dataAlign='center'>Email Address</TableHeaderColumn>
-            <TableHeaderColumn width= '150' dataField='age' dataFormat={this.showDescription} dataAlign='center' headerAlign = 'centre'>Age</TableHeaderColumn>
+            <TableHeaderColumn width= '200' dataField='emailAddress' dataAlign='center'>Email Address</TableHeaderColumn>
+            <TableHeaderColumn width= '150' dataField='age' dataAlign='center' headerAlign = 'centre'>Age</TableHeaderColumn>
             <TableHeaderColumn width= '100' dataField='updateButton' dataFormat={this.createUpdateButton} dataAlign='center'></TableHeaderColumn>
             <TableHeaderColumn width= '100' dataField='button' dataFormat={this.createDeleteButton} dataAlign='center'></TableHeaderColumn>  
           </BootstrapTable>    

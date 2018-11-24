@@ -4,7 +4,7 @@ import axios from 'axios';
 import ReactDOM from 'react-dom';
 import RecipeTable from './RecipeTable.js';
 import UserTable from './UserTable.js';
-// import ReviewTable from './ReviewTable.js';
+import ReviewTable from './ReviewTable.js';
 
 
 class App extends Component {
@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.renderRecipes();
+    this.renderReviews();
   }
   
   renderRecipes = () => {
@@ -41,15 +41,15 @@ class App extends Component {
   }
 
 
-  // renderReviews = () => {
-  //   var url = "http://localhost:" + this.state.port + "/PersonalProject/rest/Reviews/getAllReviews";
-  //   var response;
+  renderReviews = () => {
+    var url = "http://localhost:" + this.state.port + "/new-account/rest/Reviews/getAllReviews";
+    var response;
     
-  //   axios.get(url).then((res) => {
-  //     response = res.data;
-  //     ReactDOM.render(<ReviewTable classData={response}/>, document.getElementById('tables'));
-  //   });
-  // }
+    axios.get(url).then((res) => {
+      response = res.data;
+      ReactDOM.render(<ReviewTable classData={response}/>, document.getElementById('tables'));
+    });
+  }
 
 
 
@@ -64,10 +64,11 @@ class App extends Component {
   <div className="App">
           <button className="btn btn-primary" onClick={() => this.renderRecipes()}><i className="fas fa-film" style={{width:'60px', height:'35px'}}></i></button>
           <button className="btn btn-primary" onClick={() => this.renderUsers()}><i className="fas fa-video" style={{width:'60px', height:'35px'}}></i></button>
-          {/* <button className="btn btn-primary" onClick={() => this.renderReviews()}><i className="fas fa-user" style={{width:'60px', height:'35px'}}></i></button> */}
+          <button className="btn btn-primary" onClick={() => this.renderReviews()}><i className="fas fa-user" style={{width:'60px', height:'35px'}}></i></button>
           <div id="tables">
-            {/* <UserTable/> */}
-            <RecipeTable/>
+            {/* <UserTable/>
+            <RecipeTable/> */}
+            <ReviewTable/>
 
           </div>
       </div>

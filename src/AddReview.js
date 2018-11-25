@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import{port} from './Constants.jsx';
 
 class AddReview extends Component {
     constructor(props){
         super(props);
         this.state = ({
-            tableArray: this.props.classData,
+            tableArray: this.props.data,
             type: "Add Review",
-            port: 8180
         });
     }
 
     async AddReview(){
-        var url = "http://localhost:" + this.state.port + "/new-account/rest/Reviews/createReview";
+        var url = "http://localhost:" + port + "/new-account/rest/Reviews/createReview";
         var data = {
             review:document.getElementById('ReviewInput').value,
             yearOfReview:document.getElementById('yearOfReviewInput').value,

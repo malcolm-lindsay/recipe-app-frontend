@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-
+import{port} from './Constants.jsx';
+import renderRecipes from './App.js'
+import RecipeTable from './RecipeTable.js'
 
 class UpdateRecipe extends Component {
   constructor(props){
     super(props);
     this.state = ({
-   
-        port: 8180,
-        data:[]
+           data:[]
     });
 }
 
-
   UpdateRecipe = (event) => {
+    event.preventDefault();
+
         var data = {
         recipeName:document.getElementById('newRecipeName').value,
         recipeType:document.getElementById('newRecipeType').value,
@@ -22,10 +22,10 @@ class UpdateRecipe extends Component {
         dietryInformation:document.getElementById('newDietryInformation').value
       };
       console.log(data);
-      // event.preventDefault();
-      axios.put("http://localhost:" + this.state.port + "/new-account/rest/Recipes/updateRecipe/" + document.getElementById('recipeID').value, data).then((response) => {
+      axios.put("http://localhost:" + port + "/new-account/rest/Recipes/updateRecipe/" + document.getElementById('recipeID').value, data).then((response) => {
         console.log(response.data);
-       window.location.reload();
+        window.location.reload();
+ 
       });
     }
 

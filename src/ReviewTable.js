@@ -4,6 +4,7 @@ import axios from 'axios';
 import ReactDOM from 'react-dom';
 import AddReview from './AddReview.js'
 import UpdateReview from './UpdateReview.js'
+import{port} from './Constants.jsx';
 
 class ReviewTable extends Component {
     constructor(props){
@@ -12,11 +13,9 @@ class ReviewTable extends Component {
             tableArray: this.props.classData,
             type: "Add Review",
             updateType: "Update Review",
-            port: 8180,
             data:[],
         });
     }
-
 
     createDeleteButton = (cell, rows) => {
         return <button id={rows.reviewID} className="btn btn-danger" onClick={() => this.deleteReview(rows.reviewID)}>Delete</button>;
@@ -24,7 +23,7 @@ class ReviewTable extends Component {
 
     deleteReview = (event) => {
       console.log(event);
-      var url = "http://localhost:" + this.state.port + "/new-account/rest/Reviews/deleteReview/" + event;
+      var url = "http://localhost:" + port + "/new-account/rest/Reviews/deleteReview/" + event;
       console.log(url)
       axios.delete(url).then((response) => {window.location.reload()});
     }
@@ -40,7 +39,6 @@ updateFunction = (event) => {
   ReactDOM.render(<UpdateReview info={event}/>, document.getElementById('createDiv'));
 }
 
-
   render() {
     return (
       <div className="ReviewTable" >
@@ -50,7 +48,6 @@ updateFunction = (event) => {
             <TableHeaderColumn width= '150' dataField='review' dataAlign='center'>Review</TableHeaderColumn>
             <TableHeaderColumn width= '150' dataField='yearOfReview' dataSort dataAlign='center'>Year of Review</TableHeaderColumn>
             <TableHeaderColumn width= '200' dataField='rating'  dataAlign='center'>Rating out of 10</TableHeaderColumn>
-            {/* <TableHeaderColumn width= '150' dataField='age' dataFormat={this.showDescription} dataAlign='center' headerAlign = 'centre'>Age</TableHeaderColumn> */}
             <TableHeaderColumn width= '100' dataField='updateButton' dataFormat={this.createUpdateButton} dataAlign='center'></TableHeaderColumn>
             <TableHeaderColumn width= '100' dataField='button' dataFormat={this.createDeleteButton} dataAlign='center'></TableHeaderColumn>  
           </BootstrapTable>    

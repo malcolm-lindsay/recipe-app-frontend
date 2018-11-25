@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import{port} from './Constants.jsx';
 
 class AddUser extends Component {
     constructor(props){
@@ -7,12 +8,11 @@ class AddUser extends Component {
         this.state = ({
             tableArray: this.props.classData,
             type: "Add User",
-            port: 8180
         });
     }
 
     async AddUser(){
-        var url = "http://localhost:" + this.state.port + "/new-account/rest/Users/addUser";
+        var url = "http://localhost:" + port + "/new-account/rest/Users/addUser";
         var data = {
             userName:document.getElementById('UsernameInput').value,
             dietryRequirements:document.getElementById('DietryRequirementsInput').value,

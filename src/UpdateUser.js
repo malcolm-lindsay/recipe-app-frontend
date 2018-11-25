@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import{port} from './Constants.jsx';
 
 
 class UpdateUser extends Component {
   constructor(props){
     super(props);
     this.state = ({
-   
-        port: 8180,
         data:[]
     });
 }
@@ -24,7 +22,7 @@ class UpdateUser extends Component {
       };
       console.log(data);
       event.preventDefault();
-      axios.put("http://localhost:" + this.state.port + "/new-account/rest/Users/updateUser/" + document.getElementById('userID').value, data).then((response) => {
+      axios.put("http://localhost:" + port + "/new-account/rest/Users/updateUser/" + document.getElementById('userID').value, data).then((response) => {
         console.log(response.data);
        window.location.reload();
       });

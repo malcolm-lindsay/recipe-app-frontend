@@ -5,6 +5,7 @@ import axios from 'axios';
 import ReactDOM from 'react-dom';
 import AddRecipe from './AddRecipe.js'
 import UpdateRecipe from './UpdateRecipe'
+import{port} from './Constants.jsx';
 
 class RecipeTable extends Component {
     constructor(props){
@@ -13,7 +14,6 @@ class RecipeTable extends Component {
             tableArray: this.props.classData,
             type: "Add Recipe",
             updateType: "Update Recipe",
-            port: 8180,
             data:[],
         });
     }
@@ -25,7 +25,7 @@ class RecipeTable extends Component {
 
     deleteRecipe = (event) => {
       console.log(event);
-      var url = "http://localhost:" + this.state.port + "/new-account/rest/Recipes/deleteRecipe/" + event;
+      var url = "http://localhost:" + port + "/new-account/rest/Recipes/deleteRecipe/" + event;
       console.log(url)
       axios.delete(url).then((response) => {window.location.reload()});
     }

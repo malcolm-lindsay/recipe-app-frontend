@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import{port} from './Constants.jsx';
 
 class AddRecipe extends Component {
     constructor(props){
         super(props);
         this.state = ({
-            tableArray: this.props.classData,
-            type: "Add Recipe",
-            port: 8180
+            // tableArray: this.props.classData,
+            // type: "Add Recipe",
         });
     }
 
 
     async AddRecipe(){
-        var url = "http://localhost:" + this.state.port + "/new-account/rest/Recipes/createRecipe";
+        var url = "http://localhost:" + port + "/new-account/rest/Recipes/createRecipe";
         var data = {
             recipeName:document.getElementById('recipeName').value,
             servingSize:document.getElementById('servingSize').value,

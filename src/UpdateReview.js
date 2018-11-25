@@ -1,31 +1,29 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-
+import{port} from './Constants.jsx';
+import ReviewTable from './ReviewTable.js'
 
 class UpdateReview extends Component {
   constructor(props){
     super(props);
     this.state = ({
-   
-        port: 8180,
         data:[]
     });
 }
 
 
-  UpdateRecipe = (event) => {
+  UpdateReview = (event) => {
         var data = {
         review:document.getElementById('newReview').value,
         yearOfReview:document.getElementById('newYearOfReview').value,
         rating:document.getElementById('newRating').value,
         // dietryInformation:document.getElementById('newDietryInformation').value
       };
-      console.log(data);
       // event.preventDefault();
-      axios.put("http://localhost:" + this.state.port + "/new-account/rest/Reviews/updateReview/" + document.getElementById('reviewID').value, data).then((response) => {
-        console.log(response.data);
-       window.location.reload();
+      axios.put("http://localhost:" + port + "/new-account/rest/Reviews/updateReview/" + document.getElementById('reviewID').value, data).then((response) => {
+        // event.preventDefault();
+        // this.forceUpdate()
+      window.reload.location();
       });
     }
 
@@ -49,11 +47,8 @@ Enter the updated Rating
 <br/>
 <input id = "newRating"  placeholder = "Review Rating" />
 <br/>
-{/* Enter the updated dietry information
-<br/>
-<input id ="newDietryInformation"  placeholder = "Dietry information" />
-<br/> */}
-<button className="btn btn-success" onClick={this.UpdateRecipe}>Update recipe</button>
+
+<button className="btn btn-success" onClick={this.UpdateReview}>Update review</button>
 </div>
 )}
 }

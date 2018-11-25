@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import{port} from './Constants.jsx';
-import renderRecipes from './App.js'
-import RecipeTable from './RecipeTable.js'
 
 class UpdateRecipe extends Component {
   constructor(props){

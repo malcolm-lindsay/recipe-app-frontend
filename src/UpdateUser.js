@@ -16,7 +16,7 @@ class UpdateUser extends Component {
         var data = {
         userName:document.getElementById('newUsername').value,
         dietryRequirements:document.getElementById('newDietryRequirements').value,
-        emailAddress:document.getElementById('newEmailAddress').value,
+        phoneNumber:document.getElementById('newPhoneNumber').value,
         age:document.getElementById('newAge').value
 
       };
@@ -44,9 +44,9 @@ Enter the updated Dietry Requirments
 <br/>
 <input id = "newDietryRequirements"  placeholder = "Dietry Requirments" />
 <br/>
-Enter the updated email address
+Enter the updated phone number
 <br/>
-<input id = "newEmailAddress"  placeholder = "Email Address" />
+<input id = "newnewPhoneNumber"  placeholder = "Email Address" />
 <br/>
 Enter the updated age
 <br/>

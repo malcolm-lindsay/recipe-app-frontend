@@ -6,8 +6,8 @@ class AddRecipe extends Component {
     constructor(props){
         super(props);
         this.state = ({
-            // tableArray: this.props.classData,
-            // type: "Add Recipe",
+            tableArray: this.props.classData,
+            type: "Add Recipe",
         });
     }
 

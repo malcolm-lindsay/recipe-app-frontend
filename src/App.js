@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.renderUsers();
+    this.renderRecipes();
   }
   
   renderRecipes = () => {
@@ -65,9 +65,11 @@ class App extends Component {
           <button className="btn btn-primary" onClick={() => this.renderRecipes()}>Recipes</button>
           <button className="btn btn-primary" onClick={() => this.renderUsers()}>Users</button>
           <button className="btn btn-primary" onClick={() => this.renderReviews()}>Reviews</button>
+          <br></br>
           <div id="tables">
+          <br></br>
             <UserTable/>
-            
+
           </div>
       </div>
     </div>

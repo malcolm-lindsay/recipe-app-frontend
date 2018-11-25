@@ -16,7 +16,7 @@ class AddUser extends Component {
         var data = {
             userName:document.getElementById('UsernameInput').value,
             dietryRequirements:document.getElementById('DietryRequirementsInput').value,
-            emailAddress:document.getElementById('EmailAddressInput').value,
+            phoneNumber:document.getElementById('PhoneNumberInput').value,
             age:document.getElementById('AgeInput').value,
         };
         axios.post(url, data).then((res) => {window.location.reload()});
@@ -28,7 +28,7 @@ class AddUser extends Component {
           <br/>
           <input id='UsernameInput' type='text' placeholder='Username' className="form-control"/><br/>
           <input id='DietryRequirementsInput' type='text' placeholder='DietryRequirements' className="form-control"/><br/>
-          <input id='EmailAddressInput' type='text' placeholder='EmailAddress' className="form-control"/><br/>
+          <input id='PhoneNumberInput' placeholder='Phone number' className="form-control"/><br/>
           <input id='AgeInput' type='number' placeholder='Age' className="form-control"/><br/>
           <button id="SubmitButton" className="btn btn-success" onClick={() => this.AddUser()}>{this.state.type}</button>
           <div id="createDiv"></div>

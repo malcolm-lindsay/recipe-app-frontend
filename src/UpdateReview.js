@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import{port} from './Constants.jsx';
-import ReviewTable from './ReviewTable.js'
 
 class UpdateReview extends Component {
   constructor(props){

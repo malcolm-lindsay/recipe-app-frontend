@@ -14,7 +14,7 @@ class AddReview extends Component {
     async AddReview(){
         var url = "http://localhost:" + port + "/new-account/rest/Reviews/createReview";
         var data = {
-            review:document.getElementById('ReviewInput').value,
+            nameOfRecipe:document.getElementById('nameOfRecipeInput').value,
             yearOfReview:document.getElementById('yearOfReviewInput').value,
             rating:document.getElementById('ratingInput').value,
             // age:document.getElementById('AgeInput').value,
@@ -26,7 +26,7 @@ class AddReview extends Component {
     return (
       <div className="AddReview">
           <br/>
-          <input id='ReviewInput' type='text' placeholder='Review' className="form-control"/><br/>
+          <input id='nameOfRecipeInput' type='text' placeholder='Review' className="form-control"/><br/>
           <input id='yearOfReviewInput' type='text' placeholder='Year of Review' className="form-control"/><br/>
           <input id='ratingInput' type='number' placeholder='Review Rating' className="form-control"/><br/>
           {/* <input id='AgeInput' type='number' placeholder='Age' className="form-control"/><br/> */}

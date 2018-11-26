@@ -13,17 +13,18 @@ class UpdateReview extends Component {
 
   UpdateReview = (event) => {
         var data = {
-        review:document.getElementById('newReview').value,
+        nameOfRecipe:document.getElementById('newNameOfRecipe').value,
         yearOfReview:document.getElementById('newYearOfReview').value,
         rating:document.getElementById('newRating').value,
         // dietryInformation:document.getElementById('newDietryInformation').value
       };
-      // event.preventDefault();
+ 
       axios.put("http://localhost:" + port + "/new-account/rest/Reviews/updateReview/" + document.getElementById('reviewID').value, data).then((response) => {
-        // event.preventDefault();
-        // this.forceUpdate()
+
       window.reload.location();
-      });
+      //try window.location.reload
+
+    });
     }
 
 render() {
@@ -36,7 +37,7 @@ Enter review ID
 <br/>
 Enter the updated review
 <br/>
-<input id = "newReview"  placeholder = "Review" />
+<input id = "newNameOfRecipe"  placeholder = "Name of recipe" />
 <br/>
 Enter the updated Year of review
 <br/>

@@ -11,6 +11,8 @@ import{port} from './Constants.jsx';
 
 class App extends Component {
 
+
+  
   constructor(){
     super();
     this.state = {
@@ -53,11 +55,9 @@ class App extends Component {
   }
 
 
-
-
   render() {
     return (
-
+<div style={{backgroundColor: "yellow", innerHeight:"10", backgroundSize: 'cover', margin: 20}}>
       <div>
       <h1> Recipe app</h1>
 
@@ -72,6 +72,7 @@ class App extends Component {
 
           </div>
       </div>
+    </div>
     </div>
     );
   }

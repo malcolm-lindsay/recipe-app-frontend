@@ -45,7 +45,7 @@ updateFunction = (event) => {
 
           <BootstrapTable id="tableList" data={this.state.tableArray} className="table table-striped" search scrollable >
             <TableHeaderColumn width= '100' dataField='reviewID' isKey dataSort dataAlign='center'>Review ID</TableHeaderColumn>
-            <TableHeaderColumn width= '150' dataField='review' dataAlign='center'>Review</TableHeaderColumn>
+            <TableHeaderColumn width= '150' dataField='nameOfRecipe' dataAlign='center'>Name of Recipe</TableHeaderColumn>
             <TableHeaderColumn width= '150' dataField='yearOfReview' dataSort dataAlign='center'>Year of Review</TableHeaderColumn>
             <TableHeaderColumn width= '200' dataField='rating'  dataAlign='center'>Rating out of 10</TableHeaderColumn>
             <TableHeaderColumn width= '100' dataField='updateButton' dataFormat={this.createUpdateButton} dataAlign='center'></TableHeaderColumn>

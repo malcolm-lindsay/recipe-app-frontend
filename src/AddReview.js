@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import{port, ip} from './Constants.jsx';
+import './App.css'
 
 class AddReview extends Component {
     constructor(props){

@@ -31,7 +31,7 @@ class UserTable extends Component {
     }
 
     createUpdateButton = (cell, rows) => {
-        return <button id={rows.updateButton} className="btn btn-warning" onClick={() => this.updateFunction(rows)}>Update</button>;
+        return <button id={rows.updateButton} className="buttons" onClick={() => this.updateFunction(rows)}>Update</button>;
     }
 
 createFunction = () => {
@@ -57,7 +57,7 @@ updateFunction = (event) => {
           </BootstrapTable>    
 
           <div id="createDiv">
-            <button id="CreateButton" className="btn btn-success" onClick={() => this.createFunction()}>{this.state.type}</button><br/>
+            <button id="CreateButton" className="buttons" onClick={() => this.createFunction()}>{this.state.type}</button><br/>
           </div>
       </div>
     );

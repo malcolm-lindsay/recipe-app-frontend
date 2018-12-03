@@ -12,7 +12,7 @@ class AddRecipe extends Component {
         });
     }
 
-    async AddRecipe(){
+    AddRecipe(){
         var url = ip + port + "/new-account/rest/Recipes/createRecipe";
         var data = {
             recipeName:document.getElementById('recipeName').value,

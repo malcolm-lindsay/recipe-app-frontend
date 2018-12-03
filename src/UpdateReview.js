@@ -20,7 +20,7 @@ class UpdateReview extends Component {
  
       axios.put(ip + port + "/new-account/rest/Reviews/updateReview/" + document.getElementById('reviewID').value, data).then((response) => {
 
-      window.reload.location();
+        window.location.reload();
 
     });
     }

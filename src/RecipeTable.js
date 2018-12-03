@@ -14,7 +14,7 @@ class RecipeTable extends Component {
             tableArray: this.props.classData,
             type: "Add Recipe",
             updateType: "Update Recipe",
-            data:[],
+            data:[]
         });
     }
 

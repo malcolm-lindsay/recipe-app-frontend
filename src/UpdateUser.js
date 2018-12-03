@@ -45,7 +45,7 @@ Enter the updated Dietry Requirments
 <br/>
 Enter the updated phone number
 <br/>
-<input id = "newnewPhoneNumber"  placeholder = "Email Address" />
+<input id = "newPhoneNumber"  placeholder = "Phone number" />
 <br/>
 Enter the updated age
 <br/>

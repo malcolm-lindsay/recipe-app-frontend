@@ -1,2 +1,2 @@
-export const port = 8180;
-export const ip = `//35.197.248.61`;
+export const port = '8080';
+export const ip = `//35.234.132.123:`;

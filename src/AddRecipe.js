@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import{port} from './Constants.jsx';
+import{port,ip} from './Constants.jsx';
+import './App.css'
 
 class AddRecipe extends Component {
     constructor(props){
@@ -11,9 +12,8 @@ class AddRecipe extends Component {
         });
     }
 
-
     async AddRecipe(){
-        var url = "http://localhost:" + port + "/new-account/rest/Recipes/createRecipe";
+        var url = ip + port + "/new-account/rest/Recipes/createRecipe";
         var data = {
             recipeName:document.getElementById('recipeName').value,
             servingSize:document.getElementById('servingSize').value,
@@ -23,7 +23,6 @@ class AddRecipe extends Component {
         axios.post(url, data).then((res) => {window.location.reload()});
     }                                   
 
-
   render() {
     return (
       <div className="AddRecipe">
@@ -32,10 +31,11 @@ class AddRecipe extends Component {
           <input id='servingSize' type='text' placeholder='Serving Size' className="form-control"/><br/>
           <input id='recipeType' type='text' placeholder='Recipe Type' className="form-control"/><br/>
           <input id='dietryInformation' type='text' placeholder='Dietry Information' className="form-control"/><br/>
-          <button id="SubmitButton" className="btn btn-success" onClick={() => this.AddRecipe()}>{this.state.type}</button>
+          <button id="SubmitButton" className="buttons" onClick={() => this.AddRecipe()}>{this.state.type}</button>
           <div id="createDiv"></div>
       </div>
     );
   }
 }
 export default AddRecipe;
+

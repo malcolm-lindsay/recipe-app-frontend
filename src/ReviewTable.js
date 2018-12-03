@@ -4,7 +4,8 @@ import axios from 'axios';
 import ReactDOM from 'react-dom';
 import AddReview from './AddReview.js'
 import UpdateReview from './UpdateReview.js'
-import{port} from './Constants.jsx';
+import{port, ip} from './Constants.jsx';
+import './App.css'
 
 class ReviewTable extends Component {
     constructor(props){
@@ -18,18 +19,18 @@ class ReviewTable extends Component {
     }
 
     createDeleteButton = (cell, rows) => {
-        return <button id={rows.reviewID} className="btn btn-danger" onClick={() => this.deleteReview(rows.reviewID)}>Delete</button>;
+        return <button id={rows.reviewID} className="buttons" onClick={() => this.deleteReview(rows.reviewID)}>Delete</button>;
     }
 
     deleteReview = (event) => {
       console.log(event);
-      var url = "http://localhost:" + port + "/new-account/rest/Reviews/deleteReview/" + event;
+      var url = ip + port + "/new-account/rest/Reviews/deleteReview/" + event;
       console.log(url)
       axios.delete(url).then((response) => {window.location.reload()});
     }
 
     createUpdateButton = (cell, rows) => {
-        return <button id={rows.updateButton} className="btn btn-warning" onClick={() => this.updateFunction(rows)}>Update</button>;
+        return <button id={rows.updateButton} className="buttons" onClick={() => this.updateFunction(rows)}>Update</button>;
     }
 
 createFunction = () => {

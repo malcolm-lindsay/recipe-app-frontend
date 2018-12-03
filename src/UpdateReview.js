@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import{port} from './Constants.jsx';
+import{port, ip} from './Constants.jsx';
+import './App.css'
 
 class UpdateReview extends Component {
   constructor(props){
@@ -10,19 +11,16 @@ class UpdateReview extends Component {
     });
 }
 
-
   UpdateReview = (event) => {
         var data = {
         nameOfRecipe:document.getElementById('newNameOfRecipe').value,
         yearOfReview:document.getElementById('newYearOfReview').value,
         rating:document.getElementById('newRating').value,
-        // dietryInformation:document.getElementById('newDietryInformation').value
       };
  
-      axios.put("http://localhost:" + port + "/new-account/rest/Reviews/updateReview/" + document.getElementById('reviewID').value, data).then((response) => {
+      axios.put(ip + port + "/new-account/rest/Reviews/updateReview/" + document.getElementById('reviewID').value, data).then((response) => {
 
       window.reload.location();
-      //try window.location.reload
 
     });
     }
@@ -48,7 +46,7 @@ Enter the updated Rating
 <input id = "newRating"  placeholder = "Review Rating" />
 <br/>
 
-<button className="btn btn-success" onClick={this.UpdateReview}>Update review</button>
+<button className="buttons" onClick={this.UpdateReview}>Update review</button>
 </div>
 )}
 }

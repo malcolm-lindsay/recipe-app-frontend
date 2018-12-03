@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import{port} from './Constants.jsx';
+import{port, ip} from './Constants.jsx';
 
 class AddUser extends Component {
     constructor(props){
@@ -12,7 +12,7 @@ class AddUser extends Component {
     }
 
     async AddUser(){
-        var url = "http://localhost:" + port + "/new-account/rest/Users/addUser";
+        var url = ip + port + "/new-account/rest/Users/addUser";
         var data = {
             userName:document.getElementById('UsernameInput').value,
             dietryRequirements:document.getElementById('DietryRequirementsInput').value,
@@ -30,7 +30,7 @@ class AddUser extends Component {
           <input id='DietryRequirementsInput' type='text' placeholder='DietryRequirements' className="form-control"/><br/>
           <input id='PhoneNumberInput' placeholder='Phone number' className="form-control"/><br/>
           <input id='AgeInput' type='number' placeholder='Age' className="form-control"/><br/>
-          <button id="SubmitButton" className="btn btn-success" onClick={() => this.AddUser()}>{this.state.type}</button>
+          <button id="SubmitButton" className="buttons" onClick={() => this.AddUser()}>{this.state.type}</button>
           <div id="createDiv"></div>
       </div>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import{port} from './Constants.jsx';
+import{port, ip} from './Constants.jsx';
+import './App.css'
 
 class UpdateRecipe extends Component {
   constructor(props){
@@ -20,7 +21,7 @@ class UpdateRecipe extends Component {
         dietryInformation:document.getElementById('newDietryInformation').value
       };
       console.log(data);
-      axios.put("http://localhost:" + port + "/new-account/rest/Recipes/updateRecipe/" + document.getElementById('recipeID').value, data).then((response) => {
+      axios.put(ip + port + "/new-account/rest/Recipes/updateRecipe/" + document.getElementById('recipeID').value, data).then((response) => {
         console.log(response.data);
         window.location.reload();
  
@@ -56,3 +57,4 @@ Enter the updated dietry information
 )}
 }
 export default UpdateRecipe;
+

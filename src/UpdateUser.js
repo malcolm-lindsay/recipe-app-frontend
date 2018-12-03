@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import{port} from './Constants.jsx';
-
+import{port, ip} from './Constants.jsx';
+import './App.css'
 
 class UpdateUser extends Component {
   constructor(props){
@@ -10,7 +10,6 @@ class UpdateUser extends Component {
         data:[]
     });
 }
-
 
   UpdateUser = (event) => {     
         var data = {
@@ -22,7 +21,7 @@ class UpdateUser extends Component {
       };
       console.log(data);
       event.preventDefault();
-      axios.put("http://localhost:" + port + "/new-account/rest/Users/updateUser/" + document.getElementById('userID').value, data).then((response) => {
+      axios.put(ip + port + "/new-account/rest/Users/updateUser/" + document.getElementById('userID').value, data).then((response) => {
         console.log(response.data);
        window.location.reload();
       });
@@ -52,7 +51,7 @@ Enter the updated age
 <br/>
 <input id ="newAge"  placeholder = "Age" />
 <br/>
-<button className="btn btn-success" onClick={this.UpdateUser}>Update User</button>
+<button className="buttons" onClick={this.UpdateUser}>Update User</button>
 </div>
 )}
 }

@@ -4,8 +4,8 @@ import axios from 'axios';
 import ReactDOM from 'react-dom';
 import AddUser from './AddUser.js'
 import UpdateUser from './UpdateUser.js'
-import{port} from './Constants.jsx';
-
+import{port, ip} from './Constants.jsx';
+import './App.css'
 
 class UserTable extends Component {
     constructor(props){
@@ -20,12 +20,12 @@ class UserTable extends Component {
 
 
     createDeleteButton = (cell, rows) => {
-        return <button id={rows.userID} className="btn btn-danger" onClick={() => this.deleteUser(rows.userID)}>Delete</button>;
+        return <button id={rows.userID} className="buttons" onClick={() => this.deleteUser(rows.userID)}>Delete</button>;
     }
 
     deleteUser = (event) => {
       console.log(event);
-      var url = "http://localhost:" + port + "/new-account/rest/Users/deleteUser/" + event;
+      var url = ip + port + "/new-account/rest/Users/deleteUser/" + event;
       console.log(url)
       axios.delete(url).then((response) => {window.location.reload()});
     }

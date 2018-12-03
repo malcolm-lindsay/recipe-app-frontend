@@ -1,3 +1,5 @@
+
+
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
@@ -5,13 +7,10 @@ import ReactDOM from 'react-dom';
 import RecipeTable from './RecipeTable.js';
 import UserTable from './UserTable.js';
 import ReviewTable from './ReviewTable.js';
-import{port} from './Constants.jsx';
-
-
+import{port, ip} from './Constants.jsx';
+import './App.css'
 
 class App extends Component {
-
-
   
   constructor(){
     super();
@@ -25,7 +24,7 @@ class App extends Component {
   }
   
   renderRecipes = () => {
-    var url = "http://localhost:" + port + "/new-account/rest/Recipes/getAllRecipes";
+    var url = ip + port + "/new-account/rest/Recipes/getAllRecipes";
     var response;
     axios.get(url).then((res) =>{
       response = res.data;
@@ -33,9 +32,8 @@ class App extends Component {
     });
   }
 
-
   renderUsers = () => {
-        var url = "http://localhost:" + port + "/new-account/rest/Users/getAllUsers";
+        var url = ip + port + "/new-account/rest/Users/getAllUsers";
     var response;
     axios.get(url).then((res) =>{
       response = res.data;
@@ -43,9 +41,8 @@ class App extends Component {
     });
   }
 
-
   renderReviews = () => {
-    var url = "http://localhost:" + port + "/new-account/rest/Reviews/getAllReviews";
+    var url = ip + port + "/new-account/rest/Reviews/getAllReviews";
     var response;
     
     axios.get(url).then((res) => {
@@ -54,22 +51,22 @@ class App extends Component {
     });
   }
 
-
   render() {
     return (
-<div style={{backgroundColor: "yellow", innerHeight:"10", backgroundSize: 'cover', margin: 20}}>
+<div>
       <div>
       <h1> Recipe app</h1>
 
   <div className="App">
-          <button className="btn btn-primary" onClick={() => this.renderRecipes()}>Recipes</button>
-          <button className="btn btn-primary" onClick={() => this.renderUsers()}>Users</button>
-          <button className="btn btn-primary" onClick={() => this.renderReviews()}>Reviews</button>
+
+          <button className='buttons'   onClick={() => this.renderRecipes()}>Recipes</button>
+          <button className='buttons'  onClick={() => this.renderUsers()}>Users</button>
+          <button className='buttons'  onClick={() => this.renderReviews()}>Reviews</button>
           <br></br>
           <div id="tables">
           <br></br>
             <UserTable/>
-
+ 
           </div>
       </div>
     </div>

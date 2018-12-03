@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-import 'react-bootstrap-table/dist/react-bootstrap-table.min.css';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import AddRecipe from './AddRecipe.js'
 import UpdateRecipe from './UpdateRecipe'
-import{port} from './Constants.jsx';
+import{port, ip} from './Constants.jsx';
+import './App.css'
 
 class RecipeTable extends Component {
     constructor(props){
@@ -18,20 +18,19 @@ class RecipeTable extends Component {
         });
     }
 
-
     createDeleteButton = (cell, rows) => {
-        return <button id={rows.recipeID} className="btn btn-danger" onClick={() => this.deleteRecipe(rows.recipeID)}>Delete</button>;
+        return <button id={rows.recipeID} className="buttons" onClick={() => this.deleteRecipe(rows.recipeID)}>Delete</button>;
     }
 
     deleteRecipe = (event) => {
       console.log(event);
-      var url = "http://localhost:" + port + "/new-account/rest/Recipes/deleteRecipe/" + event;
+      var url = ip + port + "/new-account/rest/Recipes/deleteRecipe/" + event;
       console.log(url)
       axios.delete(url).then((response) => {window.location.reload()});
     }
 
     createUpdateButton = (cell, rows) => {
-        return <button id={rows.updateButton} className="btn btn-warning" onClick={() => this.updateFunction(rows)}>Update</button>;
+        return <button id={rows.updateButton} className="buttons" onClick={() => this.updateFunction(rows)}>Update</button>;
     }
 
 createFunction = () => {
@@ -40,7 +39,6 @@ createFunction = () => {
 updateFunction = (event) => {
   ReactDOM.render(<UpdateRecipe info={event}/>, document.getElementById('createDiv'));
 }
-
 
   render() {
     return (
@@ -57,7 +55,7 @@ updateFunction = (event) => {
           </BootstrapTable>    
 
           <div id="createDiv">
-            <button id="CreateButton" className="btn btn-success" onClick={() => this.createFunction()}>{this.state.type}</button>  </div>
+            <button id="CreateButton" className="buttons" onClick={() => this.createFunction()}>{this.state.type}</button>  </div>
       </div>
     );
   }
